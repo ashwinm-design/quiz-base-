@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz Site</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 Quiz Master</h1>
+            <p>Test Your Knowledge</p>
+        </div>
+
+        <div class="content">
+            <!-- Start Screen -->
+            <div class="start-screen" id="startScreen">
+                <h2>Welcome to Quiz Master!</h2>
+                <div class="info-box">
+                    <strong>How to Play:</strong><br>
+                    • Answer each question by selecting one option<br>
+                    • You have a limited time for each question<br>
+                    • Get instant feedback on your answers<br>
+                    • Review all questions at the end
+                </div>
+
+                <div class="difficulty-section">
+                    <label class="difficulty-label">Select Difficulty Level:</label>
+                    <div class="difficulty-buttons">
+                        <button class="difficulty-btn easy" data-difficulty="easy">
+                            Easy
+                        </button>
+                        <button class="difficulty-btn medium" data-difficulty="medium">
+                            Medium
+                        </button>
+                        <button class="difficulty-btn hard" data-difficulty="hard">
+                            Hard
+                        </button>
+                    </div>
+                </div>
+
+                <button class="start-btn" id="startBtn" disabled>
+                    Start Quiz
+                </button>
+            </div>
+
+            <!-- Quiz Screen -->
+            <div class="quiz-screen" id="quizScreen">
+                <div class="question-header">
+                    <span class="question-number">
+                        Question <span id="currentQuestion">1</span> of <span id="totalQuestions">10</span>
+                    </span>
+                    <span class="question-timer" id="timer">30</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress" id="progressBar"></div>
+                </div>
+
+                <h2 class="question-text" id="questionText"></h2>
+
+                <div class="options-container" id="optionsContainer"></div>
+
+                <div class="quiz-buttons">
+                    <button class="btn next-btn" id="nextBtn" disabled>
+                        Next Question →
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results Screen -->
+            <div class="results-screen" id="resultsScreen">
+                <h2>Quiz Complete! 🎉</h2>
+                <div class="score-circle">
+                    <div class="score-value" id="scoreValue">0</div>
+                    <div class="score-label">out of 100</div>
+                </div>
+
+                <div class="result-message" id="resultMessage"></div>
+
+                <div class="result-details">
+                    <div class="result-stat">
+                        <div class="stat-item">
+                            <div class="stat-value" id="correctCount">0</div>
+                            <div class="stat-label">Correct Answers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="incorrectCount">0</div>
+                            <div class="stat-label">Incorrect Answers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="accuracy">0</div>
+                            <div class="stat-label">Accuracy %</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-section" id="reviewSection"></div>
+
+                <button class="btn restart-btn" id="restartBtn">
+                    Take Quiz Again
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
